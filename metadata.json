@@ -1,0 +1,6 @@
+{
+  "name": "Yaping Portfolio",
+  "description": "A premium portfolio showcasing custom design projects, bento UI, chronological experiences and printable CV resume dashboards.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
