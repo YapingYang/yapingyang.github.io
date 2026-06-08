@@ -1,0 +1,7 @@
+"""
+Original workflow disabled. It uploaded the entire repository and caused Jekyll to run,
+which served Jekyll-generated HTML instead of the Vite `dist` output.
+
+Kept here as reference. The active workflow `deploy-dist.yml` will build the project,
+write `dist/.nojekyll`, and publish the `dist` folder to GitHub Pages.
+"""
