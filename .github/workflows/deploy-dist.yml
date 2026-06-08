@@ -26,7 +26,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Debug: runner environment and workspace
+      - name: "Debug: runner environment and workspace"
         run: |
           echo "== runner info =="
           node -v || true
