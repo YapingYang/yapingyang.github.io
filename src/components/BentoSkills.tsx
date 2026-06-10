@@ -72,7 +72,7 @@ export default function BentoSkills() {
             </h3>
           </div>
           <p className="mt-4 md:mt-0 max-w-sm text-sm text-neutral-600 font-sans leading-relaxed">
-            A visual overview of core proficiencies, educational background, professional certifications, and work methodologies.
+            Core proficiencies, background, and how I approach building reliable AI systems.
           </p>
         </div>
 
@@ -90,13 +90,13 @@ export default function BentoSkills() {
                 <span className="font-mono text-xs uppercase tracking-wider font-semibold">Applied AI Philosophy</span>
               </div>
               <h4 id="bento-bio-title" className="text-xl md:text-2xl font-display font-bold text-[#2D2A26] tracking-tight">
-                Engineering intelligent systems with human-centric interfaces.
+                Building reliable AI systems.
               </h4>
               <p className="text-sm text-neutral-700 font-sans leading-relaxed">
-                With a background combining an M.S. in Computer Science (Specialization: HCI) from Georgia Tech and dual bachelor degrees in Math and Business, my goal has always been simple: treat software as a powerful tool to solve complex business and tech goals.
+                I started in full-stack and growth engineering, then earned an M.S. in Computer Science from Georgia Tech. Today I focus on applied AI — designing agentic and retrieval systems, and the evaluation, observability, and serving layers that make them trustworthy in production.
               </p>
               <p className="text-sm text-neutral-650 font-sans leading-relaxed">
-                Whether deploying a secure backend database container, structuring reliable Django endpoints, or orchestrating multi-agent crews with self-correcting RAG memory, I design with absolute fidelity and production-grade safety.
+                My HCI and full-stack background means I think about the whole system: not just the model, but the interface, the failure modes, and the person on the other end. Outside of building, I follow computational neuroscience and AI interpretability, and I'm active in the Research Software Engineering (RSE) community.
               </p>
             </div>
 
@@ -105,22 +105,22 @@ export default function BentoSkills() {
               <div className="flex items-start space-x-2">
                 <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                 <div>
-                  <span className="block text-xs font-mono font-medium text-neutral-800">Full-Stack Capability</span>
-                  <span className="text-[10px] text-neutral-500 font-sans block">Client logic + API proxy routes</span>
+                  <span className="block text-xs font-mono font-medium text-neutral-800">Reliability</span>
+                  <span className="text-[10px] text-neutral-500 font-sans block">Evals, structured output, guardrails</span>
                 </div>
               </div>
               <div className="flex items-start space-x-2">
                 <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                 <div>
-                  <span className="block text-xs font-mono font-medium text-neutral-800">Accessibility First</span>
-                  <span className="text-[10px] text-neutral-500 font-sans block">WAI-ARIA &amp; keyboard usability</span>
+                  <span className="block text-xs font-mono font-medium text-neutral-800">Full-Stack Range</span>
+                  <span className="text-[10px] text-neutral-500 font-sans block">Backend, pipelines, and front end</span>
                 </div>
               </div>
               <div className="flex items-start space-x-2">
                 <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                 <div>
-                  <span className="block text-xs font-mono font-medium text-neutral-800">Pragmatic Design</span>
-                  <span className="text-[10px] text-neutral-500 font-sans block">Documented Figma systems</span>
+                  <span className="block text-xs font-mono font-medium text-neutral-800">Systems Curiosity</span>
+                  <span className="text-[10px] text-neutral-500 font-sans block">Interpretability & computational neuroscience</span>
                 </div>
               </div>
             </div>
@@ -209,35 +209,27 @@ export default function BentoSkills() {
               </div>
 
               {/* Selected Proficiency bars with level and name */}
-              <div className="space-y-4">
+                <div className="space-y-4">
                 <h5 className="font-display font-semibold text-neutral-800 text-sm tracking-wide">
                   {skillsData[activeCategory].title}
                 </h5>
 
                 <div className="space-y-3.5">
-                  {skillsData[activeCategory].items.map((skill) => (
-                    <div key={skill.name} className="space-y-1.5">
-                      <div className="flex justify-between items-center text-xs">
-                        <span className="font-medium text-neutral-750 font-sans">{skill.name}</span>
-                        <span className="font-mono text-[10px] text-orange-600 font-semibold">{skill.level}%</span>
-                      </div>
-                      <div className="h-1.5 w-full bg-[#FAF6F0] rounded-full overflow-hidden border border-[#E6E1D3]">
-                        <motion.div
-                          initial={{ width: 0 }}
-                          animate={{ width: `${skill.level}%` }}
-                          transition={{ duration: 1, ease: 'easeOut' }}
-                          className="h-full bg-orange-600 rounded-full"
-                        ></motion.div>
-                      </div>
-                    </div>
-                  ))}
+                  <div className="flex flex-wrap gap-2">
+                    {skillsData[activeCategory].items.map((skill) => (
+                      <span
+                        key={skill.name}
+                        className="inline-flex items-center text-xs font-mono text-neutral-700 bg-[#F4F1EA] border border-[#E6E1D3] px-2 py-1 rounded-md"
+                      >
+                        {skill.name}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div className="text-[10px] font-mono text-neutral-500 mt-6 pt-4 border-t border-[#E6E1D3]">
-              * Levels represent production-ready confidence and experience length.
-            </div>
+            
           </div>
 
           {/* Card 4: Work Methodology & Dials (Col-Span 3) */}

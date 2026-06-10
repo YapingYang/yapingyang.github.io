@@ -69,13 +69,18 @@ function ProjectCardGraphic({ project }: { project: Project }) {
         <span className="font-mono text-[10px] text-neutral-600 uppercase tracking-wider font-medium">
           {project.completionDate}
         </span>
-        <span className="font-mono text-[9px] text-neutral-400">
-          STABLE RUNTIME
-        </span>
+        {project.status ? (
+          <span className={`px-2.5 py-1 rounded-full text-[10px] font-mono uppercase tracking-wider ${project.status === 'IN PROGRESS' ? 'bg-orange-50 text-orange-850 border border-orange-200' : 'bg-white text-neutral-500 border border-[#E6E1D3]'}`}>
+            {project.status}
+          </span>
+        ) : (
+          <span className="font-mono text-[9px] text-neutral-400">STABLE RUNTIME</span>
+        )}
       </div>
     </div>
   );
 }
+
 
 export default function ProjectsShowcase() {
   const [selectedCategory, setSelectedCategory] = useState<'all' | 'web' | 'mobile' | 'design' | 'dev-tool'>('all');
@@ -111,13 +116,13 @@ export default function ProjectsShowcase() {
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-xs font-mono uppercase tracking-widest text-orange-600 font-semibold mb-2">
-            Architectures &amp; Sandbox Systems
+            Selected Projects
           </h2>
           <h3 id="projects-section-header" className="text-3xl sm:text-4xl font-display font-extrabold text-[#2D2A26] tracking-tight">
-            Enterprise Client Deliverables
+            Building in the Open
           </h3>
           <p className="mt-3 text-neutral-600 text-sm font-sans font-light leading-relaxed">
-            Because proprietary codebases are locked under NDAs, the boxes below simulate de-identified system architectures, orchestration flows, and interactive mock runtime sandboxes.
+            Repos and live demos are landing here as I build them. Below is what's currently in progress and planned.
           </p>
         </div>
 
@@ -189,10 +194,10 @@ export default function ProjectsShowcase() {
                       )}
                     </div>
 
-                    {/* View project indicators */}
+                      {/* View project indicators */}
                     <div className="flex items-center justify-between">
                       <span className="text-[10px] font-mono text-neutral-500 group-hover:text-neutral-700 transition-colors">
-                        Click card to inspect architecture
+                        View details
                       </span>
                       <span className="p-1 rounded bg-white border border-[#E6E1D3] text-neutral-500 group-hover:text-orange-600 group-hover:border-orange-400 group-hover:bg-orange-50/50 transition-all">
                         <ExternalLink className="w-3.5 h-3.5" />

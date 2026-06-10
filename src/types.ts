@@ -15,6 +15,7 @@ export interface Project {
   image: string; // Tailwind/custom graphical placeholder description or mock path
   featured: boolean;
   completionDate: string;
+  status?: string; // e.g. 'IN PROGRESS', 'PLANNED', 'SHIPPED'
 }
 
 export interface Experience {

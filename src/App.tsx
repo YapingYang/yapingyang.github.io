@@ -165,18 +165,18 @@ export default function App() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               <div className="lg:col-span-4 text-center lg:text-left space-y-4">
                 <span className="text-xs font-mono uppercase tracking-widest text-orange-600 font-semibold">
-                  Aesthetic Focus
+                  Engineering Focus
                 </span>
                 <h3
                   id="about-section-heading"
                   className="text-3xl font-display font-extrabold text-neutral-800 tracking-tight leading-tight"
                 >
-                  Design Aesthetics &amp; Systems Logic
+                  Reliability Over Demos
                 </h3>
                 <p className="text-sm text-neutral-600 font-sans font-light leading-relaxed">
-                  I believe software engineering functions at its absolute peak
-                  when developer interfaces, robust APIs, and design guidelines
-                  co-exist seamlessly.
+                  The gap between a working AI demo and a production system is
+                  evals, structured outputs, observability, and cost control.
+                  That gap is where I spend my time.
                 </p>
               </div>
 
@@ -190,13 +190,13 @@ export default function App() {
                     01
                   </div>
                   <h4 className="text-base font-display font-bold text-neutral-800 mb-2 tracking-tight">
-                    Technical Architecture
+                    System Architecture
                   </h4>
                   <p className="text-xs text-neutral-600 font-sans leading-relaxed">
-                    Developing durable server architectures utilizing
-                    Express/Node ecosystems proxying secure API vectors,
-                    deploying containerized routines securely under GCP Cloud
-                    Run frameworks.
+                    Designing agentic and retrieval pipelines with testable
+                    components — structured outputs, citation/verification, and
+                    graceful failure handling — deployed as containerized
+                    services on GCP Cloud Run with CI-integrated evaluation.
                   </p>
                 </div>
 
@@ -208,12 +208,13 @@ export default function App() {
                     02
                   </div>
                   <h4 className="text-base font-display font-bold text-neutral-800 mb-2 tracking-tight">
-                    Responsive Presentation
+                    Full-Stack Range
                   </h4>
                   <p className="text-xs text-neutral-600 font-sans leading-relaxed">
-                    Crafting highly tactile web interfaces. Utilizing fluid
-                    Tailwind utilities, CSS grid structures, standard
-                    ResizeObservers and mobile-compliant touching targets.
+                    From FastAPI services and data pipelines to polished React
+                    front ends. I can build and ship the whole system, not just
+                    the model — including the interface the user actually
+                    touches.
                   </p>
                 </div>
               </div>
