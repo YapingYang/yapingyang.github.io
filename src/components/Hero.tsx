@@ -121,7 +121,7 @@ export default function Hero({ onNavClick }: HeroProps) {
             {/* Quick Metrics */}
             <motion.div
               variants={itemVariants}
-              className="grid grid-cols-1 sm:grid-cols-3 gap-4 border-y border-[#E6E1D3] py-5 max-w-lg"
+              className="grid grid-cols-1 min-[380px]:grid-cols-2 md:grid-cols-3 gap-4 border-y border-[#E6E1D3] py-5 max-w-lg"
             >
               <div id="metric-experience" className="text-left">
                 <span className="block text-2xl font-display font-bold text-[#2D2A26]">
@@ -133,7 +133,7 @@ export default function Hero({ onNavClick }: HeroProps) {
               </div>
               <div
                 id="metric-satisfaction"
-                className="text-left border-x border-[#E6E1D3] px-4"
+                className="text-left md:border-x md:border-[#E6E1D3] md:px-4"
               >
                 <span className="block text-2xl font-display font-bold text-[#2D2A26]">
                   M.S. CS
@@ -142,7 +142,7 @@ export default function Hero({ onNavClick }: HeroProps) {
                   Georgia Tech
                 </span>
               </div>
-              <div id="metric-projects" className="text-left pl-2">
+              <div id="metric-projects" className="text-left md:pl-2">
                 <span className="block text-2xl font-display font-bold text-[#2D2A26]">
                   Agentic AI
                 </span>
