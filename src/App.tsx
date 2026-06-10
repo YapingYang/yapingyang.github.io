@@ -263,9 +263,11 @@ export default function App() {
               <div className="flex items-center space-x-2">
                 <div className="relative w-6 h-6 rounded-full border border-orange-500 overflow-hidden bg-transparent">
                   <img
-                    src={profileWatercolor}
+                    src={profile1200}
                     alt="yaping.tech logo"
                     referrerPolicy="no-referrer"
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover"
                   />
                 </div>
