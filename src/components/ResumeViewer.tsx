@@ -142,11 +142,11 @@ export default function ResumeViewer() {
           {/* Sheet Header Section (2 Core Columns: Name/Role vs Coordinates) */}
           <div className="flex flex-col md:flex-row md:justify-between md:items-start pb-8 mb-8 gap-6 print:flex-row print:justify-between print:pb-6 print:mb-6">
             <div className="space-y-2">
-              <h1
+              <h2
                 className={`text-3xl sm:text-4xl font-display font-extrabold tracking-tight ${paperTheme === "light" ? "text-[#2D2A26]" : "text-white"} print:text-black print:text-3xl`}
               >
                 {personalInfo.name}
-              </h1>
+              </h2>
               <h2 className="text-sm font-mono tracking-wider text-orange-600 dark:text-orange-400 font-semibold uppercase print:text-black print:text-xs">
                 {personalInfo.title}
               </h2>

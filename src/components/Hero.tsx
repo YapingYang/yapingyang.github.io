@@ -82,9 +82,9 @@ export default function Hero({ onNavClick }: HeroProps) {
 
             {/* Title / Name Header */}
             <motion.div variants={itemVariants} className="space-y-2">
-              <h1 className="text-sm font-mono tracking-widest text-orange-600 uppercase font-semibold">
+              <p className="text-sm font-mono tracking-widest text-orange-600 uppercase font-semibold" aria-hidden="true">
                 Hello, my name is
-              </h1>
+              </p>
               <h2
                 id="hero-main-header-name"
                 className="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold text-[#2D2A26] tracking-tight leading-none"
