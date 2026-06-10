@@ -3,30 +3,43 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState, useEffect } from 'react';
-import { Menu, X, ArrowUpRight, Award, FileText } from 'lucide-react';
-import profileWatercolor from '../assets/images/profile_watercolor_1780885225682.png';
+import { useState, useEffect, useRef } from 'react'
+import { Menu, X, ArrowUpRight, FileText } from 'lucide-react'
+import profileWatercolor from '../assets/images/profile_watercolor_1780885225682.png'
 
 interface NavbarProps {
-  onNavClick: (sectionId: string) => void;
-  activeSection: string;
+  onNavClick: (sectionId: string) => void
+  activeSection: string
 }
 
 export default function Navbar({ onNavClick, activeSection }: NavbarProps) {
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+  const menuRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    const handleScroll = () => setScrolled(window.scrollY > 20)
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  // Close mobile menu on escape and clicks outside
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsOpen(false)
+    }
+    const onClickOutside = (e: MouseEvent) => {
+      if (!menuRef.current) return
+      const target = e.target as Node
+      if (isOpen && !menuRef.current.contains(target)) setIsOpen(false)
+    }
+    window.addEventListener('keydown', onKey)
+    window.addEventListener('mousedown', onClickOutside)
+    return () => {
+      window.removeEventListener('keydown', onKey)
+      window.removeEventListener('mousedown', onClickOutside)
+    }
+  }, [isOpen])
 
   const navItems = [
     { label: 'About', target: 'about' },
@@ -35,18 +48,17 @@ export default function Navbar({ onNavClick, activeSection }: NavbarProps) {
     { label: 'Experience', target: 'experience' },
     { label: 'Resume CV', target: 'resume' },
     { label: 'Contact', target: 'contact' },
-  ];
+  ]
 
-  // Toggle to hide the Projects nav item without deleting it.
-  // Set to `true` to show the Projects nav link again.
-  const SHOW_PROJECTS_NAV = false;
-
-  const navItemsFiltered = SHOW_PROJECTS_NAV ? navItems : navItems.filter((i) => i.target !== 'projects');
+  const SHOW_PROJECTS_NAV = false
+  const navItemsFiltered = SHOW_PROJECTS_NAV
+    ? navItems
+    : navItems.filter((i) => i.target !== 'projects')
 
   const handleItemClick = (target: string) => {
-    onNavClick(target);
-    setIsOpen(false);
-  };
+    onNavClick(target)
+    setIsOpen(false)
+  }
 
   return (
     <nav
@@ -65,6 +77,7 @@ export default function Navbar({ onNavClick, activeSection }: NavbarProps) {
               id="navbar-logo-btn"
               onClick={() => handleItemClick('hero')}
               className="group flex items-center space-x-2 text-neutral-800 font-display font-bold text-lg tracking-wider focus:outline-none cursor-pointer"
+              aria-label="Go to top"
             >
               <div className="relative w-8 h-8 rounded-full border border-orange-500 overflow-hidden bg-transparent shadow-3xs group-hover:scale-105 transition-all duration-300">
                 <img
@@ -128,6 +141,8 @@ export default function Navbar({ onNavClick, activeSection }: NavbarProps) {
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-neutral-600 hover:text-neutral-900 hover:bg-[#F4F1EA] focus:outline-none"
               aria-label="Toggle navigation menu"
+              aria-expanded={isOpen}
+              aria-controls="mobile-nav-menu-panel"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -137,14 +152,14 @@ export default function Navbar({ onNavClick, activeSection }: NavbarProps) {
 
       {/* Mobile Menu Open Panel */}
       {isOpen && (
-        <div id="mobile-nav-menu-panel" className="md:hidden bg-[#FAF6F0] border-b border-[#E6E1D3] shadow-2xl animate-in fade-in duration-200">
-          <div className="px-2 pt-2 pb-4 space-y-1 sm:px-3">
+        <div id="mobile-nav-menu-panel" ref={menuRef} className="md:hidden bg-[#FAF6F0] border-b border-[#E6E1D3] shadow-2xl animate-in fade-in duration-200">
+          <div className="px-2 pt-2 pb-4 space-y-1 sm:px-3" role="menu" aria-label="Mobile navigation">
             {navItemsFiltered.map((item) => (
               <button
                 key={item.target}
                 id={`mobile-nav-link-${item.target}`}
                 onClick={() => handleItemClick(item.target)}
-                className={`block w-full text-left px-4 py-2.5 rounded-md text-sm font-mono uppercase tracking-wider ${
+                className={`block w-full text-left px-4 py-3 rounded-md text-sm font-mono uppercase tracking-wider ${
                   activeSection === item.target
                     ? 'text-orange-700 bg-[#F4F1EA] font-semibold border-l-4 border-orange-600'
                     : 'text-neutral-600 hover:bg-[#F2ECE0]/60 hover:text-neutral-900'
@@ -165,7 +180,7 @@ export default function Navbar({ onNavClick, activeSection }: NavbarProps) {
               <button
                 id="mobile-nav-hire-btn"
                 onClick={() => handleItemClick('contact')}
-                className="w-full py-2.5 bg-orange-700 hover:bg-orange-600 text-white rounded-md text-xs font-mono flex items-center justify-center space-x-1"
+                className="w-full py-3 bg-orange-700 hover:bg-orange-600 text-white rounded-md text-xs font-mono flex items-center justify-center space-x-1"
               >
                 <span>Hire Yaping</span>
                 <ArrowUpRight className="w-4 h-4" />
@@ -175,5 +190,5 @@ export default function Navbar({ onNavClick, activeSection }: NavbarProps) {
         </div>
       )}
     </nav>
-  );
+  )
 }

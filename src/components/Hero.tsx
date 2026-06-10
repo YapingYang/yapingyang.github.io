@@ -118,7 +118,7 @@ export default function Hero({ onNavClick }: HeroProps) {
             {/* Quick Metrics */}
             <motion.div
               variants={itemVariants}
-              className="grid grid-cols-3 gap-4 border-y border-[#E6E1D3] py-5 max-w-lg"
+              className="grid grid-cols-1 sm:grid-cols-3 gap-4 border-y border-[#E6E1D3] py-5 max-w-lg"
             >
               <div id="metric-experience" className="text-left">
                 <span className="block text-2xl font-display font-bold text-[#2D2A26]">
