@@ -82,7 +82,7 @@ export default function Navbar({ onNavClick, activeSection }: NavbarProps) {
                 <div className="relative w-8 h-8 rounded-full border border-orange-500 overflow-hidden bg-transparent shadow-3xs group-hover:scale-105 transition-all duration-300">
                 <picture>
                   <source type="image/webp" srcSet={`${profile480} 480w, ${profile800} 800w, ${profile1200} 1200w`} sizes="48px" />
-                  <img src={profile1200} alt="yaping.tech logo" referrerPolicy="no-referrer" className="w-full h-full object-cover" />
+                  <img src={profile1200} alt="yaping.tech logo" referrerPolicy="no-referrer" loading="lazy" decoding="async" className="w-full h-full object-cover" />
                 </picture>
               </div>
               <span className="group-hover:text-amber-950 transition-colors duration-200">

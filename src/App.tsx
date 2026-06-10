@@ -80,7 +80,7 @@ export default function App() {
       {/* High-Resolution Watercolor Parchment Texture Overlay */}
       <picture className="fixed inset-0 pointer-events-none z-0 opacity-50 select-none bg-cover bg-center bg-no-repeat mix-blend-multiply animate-fade-in">
         <source type="image/webp" srcSet={`${watercolorBg800} 800w, ${watercolorBg1600} 1600w`} sizes="(max-width: 768px) 800px, 1600px" />
-        <img src={watercolorBg1600} alt="watercolor parchment background" className="w-full h-full object-cover" />
+        <img src={watercolorBg1600} alt="watercolor parchment background" loading="lazy" decoding="async" className="w-full h-full object-cover" />
       </picture>
 
       {/* Dynamic Filtered Fluid Watercolor Pools */}

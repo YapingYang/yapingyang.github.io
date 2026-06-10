@@ -237,6 +237,8 @@ export default function Hero({ onNavClick }: HeroProps) {
                   src={profile1200}
                   alt="Yaping Yang - Watercolor Sketch"
                   referrerPolicy="no-referrer"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-auto max-h-[28rem] md:max-h-[32rem] object-contain select-none transition-transform duration-500 hover:scale-[1.02] mix-blend-multiply"
                 />
               </picture>
