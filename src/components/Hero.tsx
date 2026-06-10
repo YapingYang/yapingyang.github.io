@@ -50,7 +50,7 @@ export default function Hero({ onNavClick }: HeroProps) {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden bg-transparent text-[#2D2A26]"
+      className="relative min-h-screen pt-24 pb-16 overflow-hidden bg-transparent text-[#2D2A26]"
     >
       {/* Premium Minimal Backdrop Pattern */}
       <div className="absolute inset-0 z-0 opacity-20">
@@ -60,13 +60,13 @@ export default function Hero({ onNavClick }: HeroProps) {
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
           {/* Hero Left Content Column */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="lg:col-span-7 flex flex-col space-y-6 text-left lg:pr-6"
+            className="order-1 lg:order-none lg:col-span-7 flex flex-col space-y-6 text-left lg:pr-6 w-full"
           >
             {/* Announcement Pill Badge */}
             <motion.div
@@ -225,7 +225,7 @@ export default function Hero({ onNavClick }: HeroProps) {
               damping: 18,
               delay: 0.25,
             }}
-            className="lg:col-span-5 flex justify-center lg:justify-end"
+            className="order-2 lg:order-none lg:col-span-5 flex justify-center lg:justify-end w-full"
           >
             <div className="relative w-full max-w-sm md:max-w-md flex items-center justify-center">
               {/* Soft atmospheric gradient under portrait to enhance watercolor depth */}
