@@ -1,6 +1,6 @@
 /**
  * @license
- * SPDX-License-Identifier: Apache-2.0
+    degree: "B.A. in Mathematics, B.B.A. in Accounting, and B.B.A. in Finance",
  */
 
 import {
@@ -17,11 +17,10 @@ export const personalInfo = {
   tagline: "Bridging full-stack engineering and intelligent agentic workflows.",
   bio: "I build production AI systems — agentic pipelines, RAG applications, and the evaluation and serving infrastructure that makes them reliable. Full-stack engineer with an M.S. in Computer Science from Georgia Tech and 6 years shipping software at scale. I care most about the unglamorous half of applied AI: structured outputs that don't break, hallucination control, evals you can trust, and latency and cost that hold up in production.",
   email: "yaping.tech@gmail.com",
-  github: "https://github.com/yaping-tech",
+  github: "https://github.com/yapingyang",
   linkedin: "https://linkedin.com/in/yaping-yang",
   location: "New York City, NY (Remote Friendly)",
   resumeUrl: "#",
-  phone: "(917) 520-3111",
 }
 
 export const skillsData: SkillCategory[] = [
@@ -243,7 +242,7 @@ export const educationData: Education[] = [
     period: "Graduated May 2018",
     location: "Florence, SC",
     details: [
-      "Dual degrees with highest honors combining rigorous quantitative math analysis with full enterprise finance and business consolidation methodologies.",
+      "Triple degrees with highest honors combining rigorous quantitative math analysis with full enterprise finance and business consolidation methodologies.",
     ],
   },
 ]
