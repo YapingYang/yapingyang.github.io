@@ -45,105 +45,96 @@ export default function ContactForm() {
 
         {/* Coordinates column centered and constrained */}
         <div className="max-w-md mx-auto space-y-6">
-            {/* Quick Copy Coordinates Block */}
-            <div className="w-full bg-white/80 border border-[#E6E1D3] rounded-2xl p-6 sm:p-8 space-y-6 shadow-xs">
-              <div className="space-y-1">
-                <h4 className="text-[10px] font-mono uppercase tracking-widest text-orange-600 font-semibold">
-                  Reach me
-                </h4>
-                <p className="text-xl font-display font-bold text-[#2D2A26]">
-                  Direct
-                </p>
-              </div>
-
-              <div className="space-y-4">
-                {/* Email Box */}
-                <div className="bg-[#FAF6F0] rounded-xl border border-[#E6E1D3] p-4.5 flex justify-between items-center">
-                  <div className="flex items-center space-x-3.5">
-                    <div className="w-9 h-9 rounded-lg bg-orange-50 border border-orange-200 flex items-center justify-center text-orange-600">
-                      <Mail className="w-4.5 h-4.5" />
-                    </div>
-                    <div>
-                      <span className="block text-[9px] font-mono text-neutral-500 uppercase tracking-widest">
-                        Email
-                      </span>
-                      <span className="text-sm font-sans text-neutral-800">
-                        {personalInfo.email}
-                      </span>
-                    </div>
+          {/* Quick Copy Coordinates Block */}
+          <div className="w-full bg-white/80 border border-[#E6E1D3] rounded-2xl p-6 sm:p-8 space-y-6 shadow-xs">
+            <div className="space-y-4">
+              {/* Email Box */}
+              <div className="bg-[#FAF6F0] rounded-xl border border-[#E6E1D3] p-4.5 flex justify-between items-center">
+                <div className="flex items-center space-x-3.5">
+                  <div className="w-9 h-9 rounded-lg bg-orange-50 border border-orange-200 flex items-center justify-center text-orange-600">
+                    <Mail className="w-4.5 h-4.5" />
                   </div>
-                  <button
-                    id="btn-copy-email"
-                    onClick={handleCopyEmail}
-                    className="p-2 bg-white border border-[#E6E1D3] hover:border-neutral-400 hover:bg-[#F2ECE0]/20 rounded-lg text-neutral-700 hover:text-black transition-all cursor-pointer shadow-3xs"
-                    title="Copy email to clipboard"
-                  >
-                    {copied ? (
-                      <Check className="w-3.5 h-3.5 text-emerald-600" />
-                    ) : (
-                      <Copy className="w-3.5 h-3.5" />
-                    )}
-                  </button>
+                  <div>
+                    <span className="block text-[9px] font-mono text-neutral-500 uppercase tracking-widest">
+                      Email
+                    </span>
+                    <span className="text-sm font-sans text-neutral-800">
+                      {personalInfo.email}
+                    </span>
+                  </div>
                 </div>
-
-                {/* Git profile box */}
-                <a
-                  id="contact-github-coord-link"
-                  href={personalInfo.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="block bg-[#FAF6F0] hover:bg-[#F2ECE0]/30 transition-all duration-250 rounded-xl border border-[#E6E1D3] hover:border-neutral-400 p-4.5 shadow-3xs"
+                <button
+                  id="btn-copy-email"
+                  onClick={handleCopyEmail}
+                  className="p-2 bg-white border border-[#E6E1D3] hover:border-neutral-400 hover:bg-[#F2ECE0]/20 rounded-lg text-neutral-700 hover:text-black transition-all cursor-pointer shadow-3xs"
+                  title="Copy email to clipboard"
                 >
-                  <div className="flex items-center space-x-3.5">
-                    <div className="w-9 h-9 rounded-lg bg-white border border-[#E6E1D3] flex items-center justify-center text-neutral-650">
-                      <Github className="w-4.5 h-4.5" />
-                    </div>
-                    <div>
-                      <span className="block text-[9px] font-mono text-neutral-500 uppercase tracking-widest">
-                        GitHub
-                      </span>
-                      <span className="text-sm font-sans text-neutral-800">
-                        github.com/yapingyang
-                      </span>
-                    </div>
-                  </div>
-                </a>
-
-                {/* LinkedIn box */}
-                <a
-                  id="contact-linkedin-coord-link"
-                  href={personalInfo.linkedin}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="block bg-[#FAF6F0] hover:bg-[#F2ECE0]/30 transition-all duration-250 rounded-xl border border-[#E6E1D3] hover:border-neutral-400 p-4.5 shadow-3xs"
-                >
-                  <div className="flex items-center space-x-3.5">
-                    <div className="w-9 h-9 rounded-lg bg-white border border-[#E6E1D3] flex items-center justify-center text-orange-605">
-                      <Linkedin className="w-4.5 h-4.5" />
-                    </div>
-                    <div>
-                      <span className="block text-[9px] font-mono text-neutral-500 uppercase tracking-widest">
-                        LinkedIn
-                      </span>
-                      <span className="text-sm font-sans text-neutral-800">
-                        linkedin.com/in/yaping-yang
-                      </span>
-                    </div>
-                  </div>
-                </a>
+                  {copied ? (
+                    <Check className="w-3.5 h-3.5 text-emerald-600" />
+                  ) : (
+                    <Copy className="w-3.5 h-3.5" />
+                  )}
+                </button>
               </div>
-            </div>
 
-            {/* Design Ethos card block */}
-            <div className="w-full bg-linear-to-br from-orange-50/50 to-[#FAF6F0]/30 border border-[#E6E1D3] p-6 rounded-2xl">
-              <p className="text-xs sm:text-sm text-neutral-650 font-sans leading-relaxed italic">
-                "The hard part of applied AI isn't the demo — it's making it
-                reliable."
-              </p>
-              <span className="block text-[10px] font-mono text-orange-600 uppercase tracking-widest mt-4 font-semibold">
-                &mdash; Yaping
-              </span>
+              {/* Git profile box */}
+              <a
+                id="contact-github-coord-link"
+                href={personalInfo.github}
+                target="_blank"
+                rel="noreferrer"
+                className="block bg-[#FAF6F0] hover:bg-[#F2ECE0]/30 transition-all duration-250 rounded-xl border border-[#E6E1D3] hover:border-neutral-400 p-4.5 shadow-3xs"
+              >
+                <div className="flex items-center space-x-3.5">
+                  <div className="w-9 h-9 rounded-lg bg-white border border-[#E6E1D3] flex items-center justify-center text-neutral-650">
+                    <Github className="w-4.5 h-4.5" />
+                  </div>
+                  <div>
+                    <span className="block text-[9px] font-mono text-neutral-500 uppercase tracking-widest">
+                      GitHub
+                    </span>
+                    <span className="text-sm font-sans text-neutral-800">
+                      github.com/yapingyang
+                    </span>
+                  </div>
+                </div>
+              </a>
+
+              {/* LinkedIn box */}
+              <a
+                id="contact-linkedin-coord-link"
+                href={personalInfo.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="block bg-[#FAF6F0] hover:bg-[#F2ECE0]/30 transition-all duration-250 rounded-xl border border-[#E6E1D3] hover:border-neutral-400 p-4.5 shadow-3xs"
+              >
+                <div className="flex items-center space-x-3.5">
+                  <div className="w-9 h-9 rounded-lg bg-white border border-[#E6E1D3] flex items-center justify-center text-orange-605">
+                    <Linkedin className="w-4.5 h-4.5" />
+                  </div>
+                  <div>
+                    <span className="block text-[9px] font-mono text-neutral-500 uppercase tracking-widest">
+                      LinkedIn
+                    </span>
+                    <span className="text-sm font-sans text-neutral-800">
+                      linkedin.com/in/yaping-yang
+                    </span>
+                  </div>
+                </div>
+              </a>
             </div>
+          </div>
+
+          {/* Design Ethos card block */}
+          <div className="w-full bg-linear-to-br from-orange-50/50 to-[#FAF6F0]/30 border border-[#E6E1D3] p-6 rounded-2xl">
+            <p className="text-xs sm:text-sm text-neutral-650 font-sans leading-relaxed italic">
+              "The hard part of applied AI isn't the demo — it's making it
+              reliable."
+            </p>
+            <span className="block text-[10px] font-mono text-orange-600 uppercase tracking-widest mt-4 font-semibold">
+              &mdash; Yaping
+            </span>
+          </div>
         </div>
       </div>
     </section>
