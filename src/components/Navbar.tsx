@@ -37,6 +37,12 @@ export default function Navbar({ onNavClick, activeSection }: NavbarProps) {
     { label: 'Contact', target: 'contact' },
   ];
 
+  // Toggle to hide the Projects nav item without deleting it.
+  // Set to `true` to show the Projects nav link again.
+  const SHOW_PROJECTS_NAV = false;
+
+  const navItemsFiltered = SHOW_PROJECTS_NAV ? navItems : navItems.filter((i) => i.target !== 'projects');
+
   const handleItemClick = (target: string) => {
     onNavClick(target);
     setIsOpen(false);
@@ -76,7 +82,7 @@ export default function Navbar({ onNavClick, activeSection }: NavbarProps) {
 
           {/* Desktop Nav Items */}
           <div className="hidden md:flex items-center space-x-1 lg:space-x-3">
-            {navItems.map((item) => (
+            {navItemsFiltered.map((item) => (
               <button
                 key={item.target}
                 id={`nav-link-${item.target}`}
@@ -133,7 +139,7 @@ export default function Navbar({ onNavClick, activeSection }: NavbarProps) {
       {isOpen && (
         <div id="mobile-nav-menu-panel" className="md:hidden bg-[#FAF6F0] border-b border-[#E6E1D3] shadow-2xl animate-in fade-in duration-200">
           <div className="px-2 pt-2 pb-4 space-y-1 sm:px-3">
-            {navItems.map((item) => (
+            {navItemsFiltered.map((item) => (
               <button
                 key={item.target}
                 id={`mobile-nav-link-${item.target}`}

@@ -44,7 +44,10 @@ export const skillsData: SkillCategory[] = [
       { name: "SQL / PostgreSQL / pgvector", level: 91 },
       { name: "Docker", level: 90 },
       { name: "GCP (Cloud Run) / AWS", level: 90 },
-      { name: "CI/CD; Observability (Langfuse, Prometheus/Grafana)", level: 89 },
+      {
+        name: "CI/CD; Observability (Langfuse, Prometheus/Grafana)",
+        level: 89,
+      },
     ],
   },
   {
@@ -67,7 +70,7 @@ export const projectsData: Project[] = [
     details: [
       "Agentic enrichment pipeline with structured outputs and provenance",
       "Automated labeled evaluation benchmark integrated into CI",
-      "Confidence scoring and citation verification for downstream accuracy"
+      "Confidence scoring and citation verification for downstream accuracy",
     ],
     category: "dev-tool",
     technologies: ["LangGraph", "Python", "FastAPI", "pgvector", "Langfuse"],
@@ -85,7 +88,7 @@ export const projectsData: Project[] = [
     details: [
       "Standardized metrics for RAG systems",
       "Pluggable evaluators for citation and hallucination checks",
-      "Integrates with dataset loaders and common vector stores"
+      "Integrates with dataset loaders and common vector stores",
     ],
     category: "dev-tool",
     technologies: ["Python", "RAGAS", "Qdrant"],
@@ -103,7 +106,7 @@ export const projectsData: Project[] = [
     details: [
       "Benchmarking quantization strategies and caching layers",
       "Load testing for P95/P99 latency under configurable concurrency",
-      "Cost vs latency tradeoff analysis for serving infra"
+      "Cost vs latency tradeoff analysis for serving infra",
     ],
     category: "web",
     technologies: ["Python", "FastAPI", "Docker"],
@@ -123,18 +126,18 @@ export const experiencesData: Experience[] = [
     location: "Remote",
     period: "Jan 2026 - Present",
     description: [
-      "Advise early-stage and growth-stage companies on full-stack architecture, GTM automation, and AI-enabled product development, implementing state-of-the-art LLM capabilities and self-healing Django orchestration backends.",
-      "Design and implement end-to-end automation pipelines using Python, n8n, and Clay, reducing manual workflows and accelerating go-to-market execution for B2B SaaS clients.",
-      "Lead technical discovery and solution design engagements, translating complex business requirements into scalable, secure, and production-ready engineering deliverables.",
+      "Build production AI and automation systems for early- and growth-stage companies — LLM-backed workflows, agentic and retrieval prototypes, and data-integration pipelines in Python.",
+      "Lead technical discovery and solution architecture, turning ambiguous requirements into tested, reliable, production-ready deliverables.",
+      "Design end-to-end backend and integration systems (APIs, Django services, workflow automation) with attention to structured outputs, failure handling, and maintainability.",
     ],
     skills: [
       "Python",
+      "FastAPI",
       "Django",
+      "LangChain/LangGraph",
+      "RAG",
+      "PostgreSQL",
       "n8n",
-      "Clay",
-      "Generative AI Agents",
-      "Agentic Workflows",
-      "Software Design Patterns",
     ],
   },
   {
@@ -156,7 +159,6 @@ export const experiencesData: Experience[] = [
       "SQL",
       "A/B Testing (Optimizely, Statsig)",
       "Salesforce",
-      "GTM Automation",
       "Mentorship",
     ],
   },

@@ -157,16 +157,19 @@ export default function ResumeViewer() {
               </h3>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 print:grid-cols-3 print:gap-4">
-                {skillsData.map((cat) => (
-                  <div key={cat.title} className="space-y-2">
-                    <h4 className="text-[11px] font-mono uppercase tracking-wider text-orange-600 dark:text-orange-400 font-semibold print:text-[9px] print:text-black">
-                      {cat.title.split('&')[0]}
-                    </h4>
-                    <p className={`text-xs font-sans font-light leading-relaxed ${paperTheme === 'light' ? 'text-neutral-600' : 'text-neutral-400'} print:text-[10px]`}>
-                      {cat.items.map(item => item.name).join(', ')}
-                    </p>
-                  </div>
-                ))}
+                {skillsData.map((cat) => {
+                  const displayTitle = cat.title.includes('Products') ? 'Foundations' : cat.title.split('&')[0];
+                  return (
+                    <div key={cat.title} className="space-y-2">
+                      <h4 className="text-[11px] font-mono uppercase tracking-wider text-orange-600 dark:text-orange-400 font-semibold print:text-[9px] print:text-black">
+                        {displayTitle}
+                      </h4>
+                      <p className={`text-xs font-sans font-light leading-relaxed ${paperTheme === 'light' ? 'text-neutral-600' : 'text-neutral-400'} print:text-[10px]`}>
+                        {cat.items.map(item => item.name).join(', ')}
+                      </p>
+                    </div>
+                  );
+                })}
               </div>
             </div>
 
@@ -272,7 +275,7 @@ export default function ResumeViewer() {
 
           {/* Paper Sheet Footer status */}
           <div className="mt-12 pt-8 border-t border-neutral-300/40 flex items-center justify-between text-neutral-500 font-mono text-[9px] dark:border-neutral-700/10 print:mt-10 print:pt-6 print:text-neutral-500 print:text-[7px]">
-            <span>STABLE WORKSPACE CONTAINER DEPLOYED</span>
+            <span aria-hidden className="sr-only" />
             <span>REFERENCES FURNISHED UPON EMAIL REQUEST</span>
           </div>
         </div>

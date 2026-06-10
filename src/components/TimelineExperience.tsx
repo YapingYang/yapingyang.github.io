@@ -34,7 +34,7 @@ export default function TimelineExperience() {
             </h3>
           </div>
           <p className="mt-4 md:mt-0 max-w-sm text-sm text-neutral-600 font-sans leading-relaxed">
-            A review of staff appointments, consulting assignments, and engineering deliverables at enterprise groups and startups.
+            Engineering roles and consulting work across startups and enterprise.
           </p>
         </div>
 
@@ -196,20 +196,20 @@ export default function TimelineExperience() {
               <div className="font-mono text-[11px] text-neutral-600 space-y-3 select-none leading-relaxed">
                 <div>
                   <p className="text-neutral-450">---</p>
-                  <p className="text-orange-600 font-semibold"># Core engineering constraints:</p>
+                  <p className="text-orange-600 font-semibold"># Core engineering principles:</p>
                 </div>
                 <div>
-                  <p><span className="text-neutral-450">performance_budget:</span></p>
-                  <p className="pl-4">initial_payload: <span className="text-orange-600 font-semibold">&lt; 150kb</span></p>
-                  <p className="pl-4">interactive_delay: <span className="text-orange-600 font-semibold">&lt; 100ms</span></p>
+                  <p><span className="text-neutral-450">reliability:</span></p>
+                  <p className="pl-4">structured_output: <span className="text-orange-600 font-semibold">"validated, typed"</span></p>
+                  <p className="pl-4">eval_coverage: <span className="text-orange-600 font-semibold">"in CI"</span></p>
                 </div>
                 <div>
-                  <p><span className="text-neutral-450">accessibility_targets:</span></p>
-                  <p className="pl-4">lighthouse_score: <span className="text-orange-600 font-semibold">"100.00"</span></p>
-                  <p className="pl-4">wcag_level: <span className="text-orange-600 font-semibold">"AAA compliant"</span></p>
+                  <p><span className="text-neutral-450">production:</span></p>
+                  <p className="pl-4">observability: <span className="text-orange-600 font-semibold">"traces + cost"</span></p>
+                  <p className="pl-4">failure_handling: <span className="text-orange-600 font-semibold">"graceful"</span></p>
                 </div>
                 <div>
-                  <p className="text-yellow-700 font-medium"># Craft is code. Respect constraints.</p>
+                  <p className="text-yellow-700 font-medium"># Reliability is the hard part. Engineer for it.</p>
                 </div>
               </div>
             </div>
