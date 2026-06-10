@@ -227,7 +227,7 @@ export default function Hero({ onNavClick }: HeroProps) {
             }}
             className="order-2 lg:order-none lg:col-span-5 flex justify-center lg:justify-end w-full"
           >
-            <div className="relative w-full max-w-sm md:max-w-md flex items-center justify-center">
+            <div className="relative w-full max-w-sm md:max-w-md flex items-center justify-center" style={{ aspectRatio: "4/5" }}>
               {/* Soft atmospheric gradient under portrait to enhance watercolor depth */}
               <div className="absolute inset-0 bg-radial-gradient(ellipse at center, rgba(234,88,12,0.06) 0%, transparent 70%) pointer-events-none rounded-full blur-3xl"></div>
 
@@ -237,7 +237,6 @@ export default function Hero({ onNavClick }: HeroProps) {
                   src={profile1200}
                   alt="Yaping Yang - Watercolor Sketch"
                   referrerPolicy="no-referrer"
-                  loading="lazy"
                   decoding="async"
                   className="w-full h-auto max-h-[28rem] md:max-h-[32rem] object-contain select-none transition-transform duration-500 hover:scale-[1.02] mix-blend-multiply"
                 />
