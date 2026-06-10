@@ -5,7 +5,9 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { Menu, X, ArrowUpRight, FileText } from 'lucide-react'
-import profileWatercolor from '../assets/images/profile_watercolor_1780885225682.png'
+import profile480 from '../assets/images/profile_watercolor_1780885225682-480.webp'
+import profile800 from '../assets/images/profile_watercolor_1780885225682-800.webp'
+import profile1200 from '../assets/images/profile_watercolor_1780885225682-1200.webp'
 
 interface NavbarProps {
   onNavClick: (sectionId: string) => void
