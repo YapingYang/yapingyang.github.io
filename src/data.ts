@@ -214,6 +214,14 @@ export const certificationsData: Certification[] = [
     credentialId: "IBM-AI-AGENTS-9128",
     link: "#",
   },
+  {
+    id: "cert-2",
+    name: "Product Management Professional Certificate",
+    issuer: "BrainStation",
+    date: "2023",
+    credentialId: "",
+    link: "#",
+  },
   // Other certificates removed per request; add 'AI Safety — BlueDot Impact' only if confirmed.
 ]
 
