@@ -13,8 +13,13 @@ import ResumeViewer from "./components/ResumeViewer"
 import ContactForm from "./components/ContactForm"
 import { personalInfo } from "./data"
 import { ArrowUp, Github, Linkedin, Mail, Triangle } from "lucide-react"
-import watercolorBg from "./assets/images/watercolor_parchment_bg_1780884222094.png"
-import profileWatercolor from "./assets/images/profile_watercolor_1780885225682.png"
+import watercolorBg800 from "./assets/images/watercolor_parchment_bg_1780884222094-800.webp"
+import watercolorBg1600 from "./assets/images/watercolor_parchment_bg_1780884222094-1600.webp"
+import watercolorBgPng from "./assets/images/watercolor_parchment_bg_1780884222094.png"
+import profile480 from "./assets/images/profile_watercolor_1780885225682-480.webp"
+import profile800 from "./assets/images/profile_watercolor_1780885225682-800.webp"
+import profile1200 from "./assets/images/profile_watercolor_1780885225682-1200.webp"
+import profilePng from "./assets/images/profile_watercolor_1780885225682.png"
 
 export default function App() {
   const [activeSection, setActiveSection] = useState("hero")
@@ -73,10 +78,10 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#FAF6F0] font-sans text-neutral-800 selection:bg-orange-600/15 selection:text-orange-950 relative">
       {/* High-Resolution Watercolor Parchment Texture Overlay */}
-      <div
-        className="fixed inset-0 pointer-events-none z-0 opacity-50 select-none bg-cover bg-center bg-no-repeat mix-blend-multiply animate-fade-in"
-        style={{ backgroundImage: `url(${watercolorBg})` }}
-      />
+      <picture className="fixed inset-0 pointer-events-none z-0 opacity-50 select-none bg-cover bg-center bg-no-repeat mix-blend-multiply animate-fade-in">
+        <source type="image/webp" srcSet={`${watercolorBg800} 800w, ${watercolorBg1600} 1600w`} sizes="(max-width: 768px) 800px, 1600px" />
+        <img src={watercolorBg1600} alt="watercolor parchment background" className="w-full h-full object-cover" />
+      </picture>
 
       {/* Dynamic Filtered Fluid Watercolor Pools */}
       <div className="fixed inset-0 pointer-events-none z-0 opacity-25 mix-blend-multiply">

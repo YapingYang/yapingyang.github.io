@@ -14,7 +14,10 @@ import {
   LayoutGrid,
 } from "lucide-react"
 import { personalInfo } from "../data"
-import profileWatercolor from "../assets/images/profile_watercolor_1780885225682.png"
+import profile480 from "../assets/images/profile_watercolor_1780885225682-480.webp"
+import profile800 from "../assets/images/profile_watercolor_1780885225682-800.webp"
+import profile1200 from "../assets/images/profile_watercolor_1780885225682-1200.webp"
+import profilePng from "../assets/images/profile_watercolor_1780885225682.png"
 
 interface HeroProps {
   onNavClick: (sectionId: string) => void
@@ -228,12 +231,15 @@ export default function Hero({ onNavClick }: HeroProps) {
               {/* Soft atmospheric gradient under portrait to enhance watercolor depth */}
               <div className="absolute inset-0 bg-radial-gradient(ellipse at center, rgba(234,88,12,0.06) 0%, transparent 70%) pointer-events-none rounded-full blur-3xl"></div>
 
-              <img
-                src={profileWatercolor}
-                alt="Yaping Yang - Watercolor Sketch"
-                referrerPolicy="no-referrer"
-                className="w-full h-auto max-h-[28rem] md:max-h-[32rem] object-contain select-none transition-transform duration-500 hover:scale-[1.02] mix-blend-multiply"
-              />
+              <picture>
+                <source type="image/webp" srcSet={`${profile480} 480w, ${profile800} 800w, ${profile1200} 1200w`} sizes="(max-width:425px) 480px, (max-width:1024px) 800px, 1200px" />
+                <img
+                  src={profile1200}
+                  alt="Yaping Yang - Watercolor Sketch"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-auto max-h-[28rem] md:max-h-[32rem] object-contain select-none transition-transform duration-500 hover:scale-[1.02] mix-blend-multiply"
+                />
+              </picture>
             </div>
           </motion.div>
         </div>
