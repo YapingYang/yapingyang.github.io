@@ -38,15 +38,15 @@ export default function ContactForm() {
             Contact
           </h3>
           <p className="mt-3 text-neutral-600 text-sm font-sans font-light leading-relaxed">
-            Open to applied AI engineering roles and interesting problems. Email is the fastest way to reach me.
+            Open to applied AI engineering roles and interesting problems. Email
+            is the fastest way to reach me.
           </p>
         </div>
 
-        {/* Coordinates column centered and expanded */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
-          <div className="lg:col-span-12 flex justify-center">
+        {/* Coordinates column centered and constrained */}
+        <div className="max-w-md mx-auto space-y-6">
             {/* Quick Copy Coordinates Block */}
-            <div className="bg-white/80 border border-[#E6E1D3] rounded-2xl p-6 sm:p-8 space-y-6 shadow-xs">
+            <div className="w-full bg-white/80 border border-[#E6E1D3] rounded-2xl p-6 sm:p-8 space-y-6 shadow-xs">
               <div className="space-y-1">
                 <h4 className="text-[10px] font-mono uppercase tracking-widest text-orange-600 font-semibold">
                   Reach me
@@ -135,15 +135,15 @@ export default function ContactForm() {
             </div>
 
             {/* Design Ethos card block */}
-            <div className="bg-linear-to-br from-orange-50/50 to-[#FAF6F0]/30 border border-[#E6E1D3] p-6 rounded-2xl">
+            <div className="w-full bg-linear-to-br from-orange-50/50 to-[#FAF6F0]/30 border border-[#E6E1D3] p-6 rounded-2xl">
               <p className="text-xs sm:text-sm text-neutral-650 font-sans leading-relaxed italic">
-                "The hard part of applied AI isn't the demo — it's making it reliable."
+                "The hard part of applied AI isn't the demo — it's making it
+                reliable."
               </p>
               <span className="block text-[10px] font-mono text-orange-600 uppercase tracking-widest mt-4 font-semibold">
                 &mdash; Engineering manifesto
               </span>
             </div>
-          </div>
         </div>
       </div>
     </section>
