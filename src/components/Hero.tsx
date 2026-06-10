@@ -21,6 +21,8 @@ interface HeroProps {
 }
 
 export default function Hero({ onNavClick }: HeroProps) {
+  // Toggle showing the Projects CTA. Set to `true` to restore the Explore Projects button.
+  const SHOW_PROJECTS = false
   // Stagger children config
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -152,21 +154,24 @@ export default function Hero({ onNavClick }: HeroProps) {
               variants={itemVariants}
               className="flex flex-wrap gap-4 items-center pt-2"
             >
-              <button
-                id="hero-view-projects-btn"
-                onClick={() => onNavClick("projects")}
-                className="flex items-center space-x-2 px-6 py-3.5 bg-orange-700 hover:bg-orange-600 text-[#FAF6F0] rounded-lg text-sm font-mono font-medium hover:shadow-xl hover:shadow-orange-700/10 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 cursor-pointer"
-              >
-                <span>Explore Projects</span>
-                <ChevronRight className="w-4 h-4" />
-              </button>
+              {SHOW_PROJECTS && (
+                <button
+                  id="hero-view-projects-btn"
+                  onClick={() => onNavClick("projects")}
+                  className="flex items-center space-x-2 px-6 py-3.5 bg-orange-700 hover:bg-orange-600 text-[#FAF6F0] rounded-lg text-sm font-mono font-medium hover:shadow-xl hover:shadow-orange-700/10 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 cursor-pointer"
+                >
+                  <span>Explore Projects</span>
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+              )}
+
               <button
                 id="hero-contact-btn"
                 onClick={() => onNavClick("contact")}
-                className="flex items-center space-x-2 px-6 py-3.5 bg-white hover:bg-[#F2ECE0]/60 text-neutral-700 hover:text-neutral-900 rounded-lg text-sm font-mono font-medium border border-[#CFC9BA] hover:border-neutral-400 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 cursor-pointer shadow-xs"
+                className="flex items-center space-x-2 px-6 py-3.5 bg-orange-700 hover:bg-orange-600 text-[#FAF6F0] rounded-lg text-sm font-mono font-medium hover:shadow-xl hover:shadow-orange-700/10 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 cursor-pointer"
               >
                 <span>Get In Touch</span>
-                <Mail className="w-4 h-4 text-orange-600" />
+                <Mail className="w-4 h-4 text-[#FAF6F0]" />
               </button>
             </motion.div>
 
