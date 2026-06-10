@@ -52,7 +52,7 @@ export default function ContactForm() {
                   Reach me
                 </h4>
                 <p className="text-xl font-display font-bold text-[#2D2A26]">
-                  Contact
+                  Direct
                 </p>
               </div>
 
@@ -141,7 +141,7 @@ export default function ContactForm() {
                 reliable."
               </p>
               <span className="block text-[10px] font-mono text-orange-600 uppercase tracking-widest mt-4 font-semibold">
-                &mdash; Engineering manifesto
+                &mdash; Yaping
               </span>
             </div>
         </div>
