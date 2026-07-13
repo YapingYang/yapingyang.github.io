@@ -6,12 +6,9 @@
 import { useState, useEffect } from "react"
 import Navbar from "./components/Navbar"
 import Hero from "./components/Hero"
-import BentoSkills from "./components/BentoSkills"
-import ProjectsShowcase from "./components/ProjectsShowcase"
-import TimelineExperience from "./components/TimelineExperience"
 import ResumeViewer from "./components/ResumeViewer"
 import ContactForm from "./components/ContactForm"
-import { personalInfo } from "./data"
+import { personalInfo, aboutContent } from "./data"
 import { ArrowUp, Github, Linkedin, Mail, Triangle } from "lucide-react"
 import watercolorBg800 from "./assets/images/watercolor_parchment_bg_1780884222094-800.webp"
 import watercolorBg1600 from "./assets/images/watercolor_parchment_bg_1780884222094-1600.webp"
@@ -20,6 +17,8 @@ import profile480 from "./assets/images/profile_watercolor_1780885225682-480.web
 import profile800 from "./assets/images/profile_watercolor_1780885225682-800.webp"
 import profile1200 from "./assets/images/profile_watercolor_1780885225682-1200.webp"
 import profilePng from "./assets/images/profile_watercolor_1780885225682.png"
+
+const SHOW_RESUME = false
 
 export default function App() {
   const [activeSection, setActiveSection] = useState("hero")
@@ -49,11 +48,8 @@ export default function App() {
 
       const sections = [
         "hero",
-        "about",
-        "skills",
-        "projects",
-        "experience",
-        "resume",
+        "about-content",
+        ...(SHOW_RESUME ? (["resume"] as const) : []),
         "contact",
       ]
 
@@ -163,7 +159,7 @@ export default function App() {
 
         {/* Section 2: Narrative Biography Focus Block */}
         <section
-          id="about"
+          id="about-content"
           className="py-24 bg-[#FAF6F0]/30 border-t border-[#E6E1D3] relative overflow-hidden print:hidden"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -176,12 +172,10 @@ export default function App() {
                   id="about-section-heading"
                   className="text-3xl font-display font-extrabold text-neutral-800 tracking-tight leading-tight"
                 >
-                  Reliability Over Demos
+                  {aboutContent.heading}
                 </h3>
                 <p className="text-sm text-neutral-600 font-sans font-light leading-relaxed">
-                  The gap between a working AI demo and a production system is
-                  evals, structured outputs, observability, and cost control.
-                  That gap is where I spend my time.
+                  {aboutContent.description}
                 </p>
               </div>
 
@@ -195,13 +189,10 @@ export default function App() {
                     01
                   </div>
                   <h4 className="text-base font-display font-bold text-neutral-800 mb-2 tracking-tight">
-                    System Architecture
+                    {aboutContent.cards[0].title}
                   </h4>
                   <p className="text-xs text-neutral-600 font-sans leading-relaxed">
-                    Designing agentic and retrieval pipelines with testable
-                    components — structured outputs, citation/verification, and
-                    graceful failure handling — deployed as containerized
-                    services on GCP Cloud Run with CI-integrated evaluation.
+                    {aboutContent.cards[0].text}
                   </p>
                 </div>
 
@@ -213,13 +204,10 @@ export default function App() {
                     02
                   </div>
                   <h4 className="text-base font-display font-bold text-neutral-800 mb-2 tracking-tight">
-                    Full-Stack Range
+                    {aboutContent.cards[1].title}
                   </h4>
                   <p className="text-xs text-neutral-600 font-sans leading-relaxed">
-                    From FastAPI services and data pipelines to polished React
-                    front ends. I can build and ship the whole system, not just
-                    the model — including the interface the user actually
-                    touches.
+                    {aboutContent.cards[1].text}
                   </p>
                 </div>
               </div>
@@ -227,27 +215,14 @@ export default function App() {
           </div>
         </section>
 
-        {/* Section 3: Bento Grid Core Skills */}
-        <div id="section-skills" className="print:hidden">
-          <BentoSkills />
-        </div>
+        {/* Section 2: Interactive Printable Resume — hidden until updated */}
+        {SHOW_RESUME && (
+          <div id="section-resume">
+            <ResumeViewer />
+          </div>
+        )}
 
-        {/* Section 4: Projects Portfolio */}
-        <div id="section-projects" className="print:hidden">
-          <ProjectsShowcase />
-        </div>
-
-        {/* Section 5: Work Experience & Timeline */}
-        <div id="section-experience" className="print:hidden">
-          <TimelineExperience />
-        </div>
-
-        {/* Section 6: Interactive Printable Resume (Visible in Print & UI toggles) */}
-        <div id="section-resume">
-          <ResumeViewer />
-        </div>
-
-        {/* Section 7: Enquiries Contact Form */}
+        {/* Section 3: Enquiries Contact Form */}
         <div id="section-contact" className="print:hidden">
           <ContactForm />
         </div>

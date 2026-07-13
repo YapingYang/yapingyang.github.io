@@ -44,18 +44,17 @@ export default function Navbar({ onNavClick, activeSection }: NavbarProps) {
   }, [isOpen])
 
   const navItems = [
-    { label: "About", target: "about" },
-    { label: "Skills", target: "skills" },
-    { label: "Projects", target: "projects" },
-    { label: "Experience", target: "experience" },
-    { label: "Resume CV", target: "resume" },
+    { label: "About", target: "hero" },
     { label: "Contact", target: "contact" },
   ]
 
   const SHOW_PROJECTS_NAV = false
-  const navItemsFiltered = SHOW_PROJECTS_NAV
-    ? navItems
-    : navItems.filter((i) => i.target !== "projects")
+  const SHOW_RESUME_NAV = false
+  const navItemsFiltered = navItems.filter(
+    (i) =>
+      (SHOW_PROJECTS_NAV || i.target !== "projects") &&
+      (SHOW_RESUME_NAV || i.target !== "resume"),
+  )
 
   const handleItemClick = (target: string) => {
     onNavClick(target)
@@ -124,14 +123,16 @@ export default function Navbar({ onNavClick, activeSection }: NavbarProps) {
 
           {/* Hire Me CTA Button */}
           <div className="hidden md:flex items-center space-x-4">
-            <button
-              id="navbar-cv-cta-btn"
-              onClick={() => handleItemClick("resume")}
-              className="flex items-center space-x-1.5 px-3 py-1.5 border border-dashed border-[#CFC9BA] hover:border-orange-600 rounded-md text-xs font-mono text-neutral-700 hover:text-neutral-900 hover:bg-[#F4F1EA]/60 transition-all cursor-pointer"
-            >
-              <FileText className="w-3.5 h-3.5 text-orange-600" />
-              <span>Print Out CV</span>
-            </button>
+            {SHOW_RESUME_NAV && (
+              <button
+                id="navbar-cv-cta-btn"
+                onClick={() => handleItemClick("resume")}
+                className="flex items-center space-x-1.5 px-3 py-1.5 border border-dashed border-[#CFC9BA] hover:border-orange-600 rounded-md text-xs font-mono text-neutral-700 hover:text-neutral-900 hover:bg-[#F4F1EA]/60 transition-all cursor-pointer"
+              >
+                <FileText className="w-3.5 h-3.5 text-orange-600" />
+                <span>Print Out CV</span>
+              </button>
+            )}
             <button
               id="navbar-hire-cta-btn"
               onClick={() => handleItemClick("contact")}
@@ -192,14 +193,16 @@ export default function Navbar({ onNavClick, activeSection }: NavbarProps) {
               </button>
             ))}
             <div className="border-t border-[#E6E1D3] mt-4 pt-4 px-4 flex flex-col space-y-2">
-              <button
-                id="mobile-nav-cv-btn"
-                onClick={() => handleItemClick("resume")}
-                className="w-full flex items-center justify-center space-x-2 py-2 border border-[#CFC9BA] hover:border-neutral-500 rounded-md text-xs font-mono text-neutral-700 hover:bg-[#F4F1EA]/60"
-              >
-                <FileText className="w-4 h-4 text-orange-600" />
-                <span>Show Printable CV</span>
-              </button>
+              {SHOW_RESUME_NAV && (
+                <button
+                  id="mobile-nav-cv-btn"
+                  onClick={() => handleItemClick("resume")}
+                  className="w-full flex items-center justify-center space-x-2 py-2 border border-[#CFC9BA] hover:border-neutral-500 rounded-md text-xs font-mono text-neutral-700 hover:bg-[#F4F1EA]/60"
+                >
+                  <FileText className="w-4 h-4 text-orange-600" />
+                  <span>Show Printable CV</span>
+                </button>
+              )}
               <button
                 id="mobile-nav-hire-btn"
                 onClick={() => handleItemClick("contact")}

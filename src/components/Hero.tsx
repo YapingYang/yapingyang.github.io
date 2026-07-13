@@ -109,14 +109,23 @@ export default function Hero({ onNavClick }: HeroProps) {
               variants={itemVariants}
               className="text-base sm:text-lg text-neutral-700 max-w-xl font-sans font-light leading-relaxed"
             >
-              I build production AI systems — agentic pipelines, RAG
-              applications, and the evaluation and serving infrastructure that
-              makes them reliable. Full-stack engineer with an M.S. in Computer
-              Science from Georgia Tech and 6 years shipping software at scale.
-              I care most about the unglamorous half of applied AI: structured
-              outputs that don't break, hallucination control, evals you can
-              trust, and latency and cost that hold up in production.
+              {personalInfo.bio}
             </motion.p>
+
+            {/* Focus chips */}
+            <motion.div
+              variants={itemVariants}
+              className="flex flex-wrap gap-2 max-w-xl"
+            >
+              {personalInfo.focus.map((item) => (
+                <span
+                  key={item}
+                  className="px-3 py-1 rounded-full bg-white/80 border border-[#E6E1D3] text-xs font-mono text-neutral-600"
+                >
+                  {item}
+                </span>
+              ))}
+            </motion.div>
 
             {/* Quick Metrics */}
             <motion.div
@@ -144,10 +153,10 @@ export default function Hero({ onNavClick }: HeroProps) {
               </div>
               <div id="metric-projects" className="text-left md:pl-2">
                 <span className="block text-2xl font-display font-bold text-[#2D2A26]">
-                  Agentic AI
+                  Applied AI
                 </span>
                 <span className="block text-xs font-mono text-neutral-500 uppercase tracking-wider">
-                  RAG · Evals
+                  RAG · Agents
                 </span>
               </div>
             </motion.div>

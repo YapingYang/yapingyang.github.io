@@ -13,9 +13,26 @@ import {
 
 export const personalInfo = {
   name: "Yaping Yang",
-  title: "Applied AI Engineer",
-  tagline: "Bridging full-stack engineering and intelligent agentic workflows.",
-  bio: "I build production AI systems — agentic pipelines, RAG applications, and the evaluation and serving infrastructure that makes them reliable. Full-stack engineer with an M.S. in Computer Science from Georgia Tech and 6 years shipping software at scale. I care most about the unglamorous half of applied AI: structured outputs that don't break, hallucination control, evals you can trust, and latency and cost that hold up in production.",
+  title: "Applied AI Engineer | Full-Stack Software Engineer",
+  tagline:
+    "I build AI-powered applications with modern LLMs — grounded in 6 years of software engineering.",
+  bio: "I build AI-powered applications with modern LLMs — grounded in 6 years of software engineering.",
+  terminalBio:
+    "I build AI-powered applications using modern LLM technologies, combining full-stack engineering experience with RAG, agent workflows, and automation systems.\n\nMy focus is making AI applications reliable, maintainable, and useful — from backend architecture to user experience.",
+  seoDescription:
+    "Building AI-powered applications with a full-stack engineering foundation.",
+  focus: [
+    "Reliable AI apps",
+    "Retrieval & agents",
+    "Full-stack delivery",
+  ],
+  exploring: [
+    "Agent architecture patterns",
+    "LLM evaluation methodologies",
+    "Retrieval optimization techniques",
+    "AI observability tooling",
+    "Production AI system design patterns",
+  ],
   email: "yaping.tech@gmail.com",
   github: "https://github.com/yapingyang",
   linkedin: "https://linkedin.com/in/yaping-yang",
@@ -23,30 +40,51 @@ export const personalInfo = {
   resumeUrl: "#",
 }
 
+export const aboutContent = {
+  heading: "Building Reliable AI Applications",
+  description:
+    "Applying software engineering discipline to AI: testing, structured outputs, observability, and thoughtful failure handling.",
+  cards: [
+    {
+      title: "System Architecture",
+      text: "Building AI application architectures with retrieval pipelines, structured outputs, validation workflows, and automated testing. Applying backend engineering principles to make AI systems easier to debug, improve, and maintain.",
+    },
+    {
+      title: "Full-Stack Range",
+      text: "From FastAPI services and data pipelines to React interfaces and user-facing products. My background allows me to build complete AI applications — not only the AI workflow, but also the systems and experiences around it.",
+    },
+  ],
+}
+
+export const philosophyContent = {
+  title: "Applied AI, built on engineering foundations.",
+  text: "Today I focus on applied AI — using my software engineering background to design AI-powered applications, retrieval systems, and automation workflows. I am especially interested in the engineering practices that make AI systems reliable: evaluation, observability, user experience, and thoughtful system design.",
+}
+
 export const skillsData: SkillCategory[] = [
   {
     title: "Applied AI",
     items: [
-      { name: "Agentic orchestration (LangGraph, CrewAI)", level: 95 },
-      { name: "RAG architecture & retrieval optimization", level: 93 },
-      { name: "Structured output (Pydantic)", level: 92 },
-      { name: "LLM evaluation (RAGAS, eval harnesses)", level: 91 },
-      { name: "Hallucination mitigation", level: 90 },
-      { name: "Prompt design", level: 90 },
+      { name: "RAG applications", level: 0 },
+      { name: "Agent workflows", level: 0 },
+      { name: "LLM APIs", level: 0 },
+      { name: "Prompt engineering", level: 0 },
+      { name: "Structured outputs (Pydantic)", level: 0 },
+      { name: "AI evaluation approaches", level: 0 },
+      { name: "Retrieval optimization", level: 0 },
     ],
   },
   {
     title: "Backend / Dev",
     items: [
-      { name: "Python (FastAPI, Django)", level: 97 },
-      { name: "TypeScript / React", level: 92 },
-      { name: "SQL / PostgreSQL / pgvector", level: 91 },
-      { name: "Docker", level: 90 },
-      { name: "GCP (Cloud Run) / AWS", level: 90 },
-      {
-        name: "CI/CD; Observability (Langfuse, Prometheus/Grafana)",
-        level: 89,
-      },
+      { name: "Python", level: 0 },
+      { name: "FastAPI", level: 0 },
+      { name: "Django", level: 0 },
+      { name: "React", level: 0 },
+      { name: "PostgreSQL", level: 0 },
+      { name: "Docker", level: 0 },
+      { name: "Cloud deployment", level: 0 },
+      { name: "CI/CD", level: 0 },
     ],
   },
   {
@@ -125,8 +163,8 @@ export const experiencesData: Experience[] = [
     location: "Remote",
     period: "Jan 2026 - Present",
     description: [
-      "Build production AI and automation systems for early- and growth-stage companies — LLM-backed workflows, agentic and retrieval prototypes, and data-integration pipelines in Python.",
-      "Lead technical discovery and solution architecture, turning ambiguous requirements into tested, reliable, production-ready deliverables.",
+      "Building AI-powered applications and automation systems for early- and growth-stage companies — LLM-backed workflows, retrieval prototypes, and data-integration pipelines in Python.",
+      "Lead technical discovery and solution architecture, turning ambiguous requirements into tested, reliable deliverables.",
       "Design end-to-end backend and integration systems (APIs, Django services, workflow automation) with attention to structured outputs, failure handling, and maintainability.",
     ],
     skills: [
