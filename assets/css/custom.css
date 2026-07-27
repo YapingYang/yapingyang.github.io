@@ -1,0 +1,163 @@
+/* Manual light/dark override, takes precedence over the theme's
+   prefers-color-scheme rules because [data-theme] has higher specificity
+   than :root inside a media query. Falls back to system preference
+   when JS is disabled or no choice has been made yet (see console.css). */
+html[data-theme="dark"] {
+    --background-color: #222225;
+    --page-width: 60em;
+    --font-color: #e8e9ed;
+    --invert-font-color: #222225;
+    --secondary-color: #a3abba;
+    --tertiary-color: #a3abba;
+    --primary-color: #62c4ff;
+    --error-color: #ff3c74;
+    --progress-bar-background: #3f3f44;
+    --progress-bar-fill: #62c4ff;
+    --code-bg-color: #3f3f44;
+}
+
+html[data-theme="light"] {
+    --background-color: #fff;
+    --font-color: #151515;
+    --invert-font-color: #fff;
+    --primary-color: #1a95e0;
+    --secondary-color: #727578;
+    --error-color: #d20962;
+    --progress-bar-background: #727578;
+    --progress-bar-fill: #151515;
+    --code-bg-color: #e8eff2;
+}
+
+.terminal-nav {
+    gap: var(--global-space);
+}
+
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: var(--global-space);
+    margin-left: auto;
+}
+
+.theme-toggle,
+.nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    height: 2em;
+    padding: 0;
+    background: transparent;
+    border: 1px solid var(--secondary-color);
+    border-radius: 4px;
+    color: var(--font-color);
+    cursor: pointer;
+    font-size: 1em;
+    line-height: 1;
+}
+
+.theme-toggle:hover,
+.nav-toggle:hover {
+    border-color: var(--primary-color);
+}
+
+.theme-toggle-icon--light {
+    display: none;
+}
+
+html[data-theme="light"] .theme-toggle-icon--dark {
+    display: none;
+}
+
+html[data-theme="light"] .theme-toggle-icon--light {
+    display: inline;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle svg {
+    width: 1.1em;
+    height: 1.1em;
+}
+
+.nav-toggle-icon--close {
+    display: none;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon--open {
+    display: none;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon--close {
+    display: inline-flex;
+}
+
+@media only screen and (max-width: 850px) {
+    .terminal-nav {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .terminal-logo {
+        flex: 1 1 auto;
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .nav-controls {
+        flex: 0 0 auto;
+        margin-left: 0;
+    }
+
+    .nav-toggle {
+        display: inline-flex;
+    }
+
+    .terminal-menu {
+        flex: 0 0 100%;
+        display: none;
+        margin-top: var(--global-space);
+    }
+
+    .terminal-menu ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .terminal-nav.nav-open .terminal-menu {
+        display: flex;
+    }
+}
+
+.footer .social {
+    display: flex;
+    align-items: center;
+    gap: calc(var(--global-space) * 1.5);
+    margin: 0;
+}
+
+.footer .social a {
+    display: inline-flex;
+    width: auto;
+    height: auto;
+    color: var(--secondary-color);
+    line-height: normal;
+    font-size: inherit;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.footer .social a:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+}
+
+.footer .social svg {
+    width: 20px;
+    height: 20px;
+}

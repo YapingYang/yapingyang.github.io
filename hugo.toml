@@ -1,0 +1,29 @@
+baseurl = "https://yapingyang.github.io/"
+title = "yapingyang"
+theme = "hugo-theme-console"
+[languages.en]
+  locale = "en-us"
+  label = "English"
+  weight = 1
+
+[params]
+  description = "Building AI-powered applications with a full-stack engineering foundation."
+
+  # Cutting off the page title to two chars for mobile (console-demo -> co)
+  titleCutting = true
+
+  # Set the animation style -- https://animate.style/
+  # To disable animations, please remove or comment animationStyle parameter
+  animateStyle = "animated zoomIn fast" 
+
+  [[params.navlinks]]
+  name = "about/"
+  url = "about/"
+
+  [[params.navlinks]]
+  name = "posts/"
+  url = "posts/"
+  
+  [[params.navlinks]]
+  name = "photos/"
+  url = "photos/"
